@@ -1,8 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import { json } from 'body-parser';
-import adminRoutes from './routes/admin';
-import chatRoutes from './routes/chat-routes';
+import chatRoutes from './routes/chat-routes'
 
 startServer()
 
@@ -19,10 +18,7 @@ async function startServer() {
   ));
   
   app.use(json());
-
-  app.use(adminRoutes)
   app.use(chatRoutes);
-
   app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     res.status(500).json({ message: err.message });
   });
