@@ -18,6 +18,6 @@ const message = 'Hello'
 .content-wrapper {
   margin: 1rem 0;
   height: fit-content;
-  background-color:#2a2a84;
+  //background-color:#2a2a84;
 }
 </style>
