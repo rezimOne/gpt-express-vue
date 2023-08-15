@@ -5,7 +5,8 @@ import { Chat, ChatContext, Completion, CompletionData } from './useChat.model';
 const state = reactive<Chat>({
   sessionStatus: undefined,
   sessionId: null,
-  chatHistory: []
+  chatHistory: [],
+  isLoading: false
 })
 
 export default function useChat(){
@@ -26,8 +27,8 @@ export default function useChat(){
         role: 'user'
       },
     }
-    state.chatHistory.push(user)
     console.log(`%c 👤 ${ text }`, 'color: #6D8ED4');
+    state.chatHistory.push(user);
   }
 
   const _saveChatAnswerToChatHistory = (response: Completion): void => {
@@ -36,8 +37,8 @@ export default function useChat(){
       ...response,
       created: Date.now(),
     }
-    state.chatHistory.push(chat)
     console.log(`%c 🤖 ${ response.message.content }`, 'color: #F4B10A');
+    state.chatHistory.push(chat);
   }
 
   const setChatContext = (): ChatContext[] => {
@@ -46,6 +47,7 @@ export default function useChat(){
   
   const postChatCompletion = async (text: string): Promise<void> => {
     try {
+      state.isLoading = true;
       _saveUserPromptToChatHistory(text);
 
       const body = {
@@ -63,6 +65,7 @@ export default function useChat(){
       });
 
       if (response && response.status === 200) {
+        state.isLoading = false;
         _saveChatAnswerToChatHistory(response.data.completion);
       }
     } catch(e) {

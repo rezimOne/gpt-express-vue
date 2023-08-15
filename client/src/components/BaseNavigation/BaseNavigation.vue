@@ -1,5 +1,5 @@
 <template>
-  <header>
+    <header>
     <nav>
       <ul>
         <li>
@@ -12,21 +12,32 @@
             -->
           <router-link to="/">Home</router-link>
         </li>
-        <li>
+        <!-- <li>
           <router-link to="/about">About</router-link>
+        </li> -->
+        <li>
+          <router-link to="/prompt-imager">Prompt Imager</router-link>
         </li>
         <li>
-          <router-link to="/chat">AskGPT</router-link>
+          <router-link to="/chat">askGPT</router-link>
         </li>
       </ul>
     </nav>
   </header>
+
+ 
+  
+
 </template>
+<script lang="ts" setup>
+</script>
 
 <style lang="scss" scoped>
 header {
+  display: flex;
+  justify-content: center;
   width: 100%;
-  height: 5rem;
+  height: 3rem;
   background-color: #11005c;
 }
 
@@ -50,21 +61,17 @@ li {
 
 a {
   text-decoration: none;
-  font: inherit;
   background: transparent;
-  border: 1px solid transparent;
   cursor: pointer;
-  color: white;
-  padding: 0.5rem 1.5rem;
+  color:#e1f4f7;
   display: inline-block;
+  //font-family: 'VT323', sans-serif;
+  //font-size: 1.4rem;
+
 }
 
 a:hover,
-a:active,
-// a.active instead of default a.router-link-active
 a.active {
   color: #f1a80a;
-  border-color: #f1a80a;
-  background-color: #1a037e;
 }
 </style>

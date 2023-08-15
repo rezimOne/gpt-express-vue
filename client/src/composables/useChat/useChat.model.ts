@@ -2,6 +2,7 @@ export interface Chat {
   sessionStatus: undefined | boolean;
   sessionId: null | string;
   chatHistory: CompletionData[];
+  isLoading: boolean;
 }
 
 export interface Completion {

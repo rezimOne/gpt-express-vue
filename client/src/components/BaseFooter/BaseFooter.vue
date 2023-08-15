@@ -5,7 +5,7 @@
 <style>
 .footer-wrapper {
   width: 100%;
-  height: 3rem;
+  height: 2rem;
   background-color: #2a2a84;
 }
 </style>
