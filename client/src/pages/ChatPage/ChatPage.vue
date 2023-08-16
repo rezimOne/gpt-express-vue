@@ -140,6 +140,9 @@ document.removeEventListener('keydown', onEnter);
     justify-content: flex-start;
     gap: 10px;
     overflow-y: auto;
+    &::-webkit-scrollbar {
+      background: none;
+    }
   }
 
   &__display-area > :first-child {
