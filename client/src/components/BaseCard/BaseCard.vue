@@ -1,8 +1,6 @@
 <template>
   <div id="card" :class="['display-card', props.role === 'user' ? 'user' : 'chat' ]">
-  <slot name="content">
-    Content
-  </slot>
+  <slot name="content"></slot>
   </div>
 </template>
 

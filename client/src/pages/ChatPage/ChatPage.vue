@@ -128,7 +128,7 @@ document.removeEventListener('keydown', onEnter);
   &__display-area {
     position: relative;
     width: 100%;
-    height: 312px;
+    height: 380px;
     border-radius: 10px;
     border: solid 2px rgb(140, 141, 144);
     background-color: rgb(210, 241, 247);
@@ -140,9 +140,6 @@ document.removeEventListener('keydown', onEnter);
     justify-content: flex-start;
     gap: 10px;
     overflow-y: auto;
-    &::-webkit-scrollbar {
-      background: none;
-    }
   }
 
   &__display-area > :first-child {
@@ -231,6 +228,15 @@ document.removeEventListener('keydown', onEnter);
     }
   }
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: none;
+}
+::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 67%, 0.295); 
+  border-radius: 10px;
+}
 .user-logo{
   margin-left: 2px;
 }
@@ -247,4 +253,6 @@ document.removeEventListener('keydown', onEnter);
   flex-direction: row;
   gap: 0.5rem;
 }
+
+
 </style>
